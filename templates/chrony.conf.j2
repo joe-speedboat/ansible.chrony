@@ -1,0 +1,22 @@
+makestep 1.0 3
+driftfile /var/lib/chrony/chrony.drift
+dumpdir {{ chrony_dumpdir }}
+dumponexit
+keyfile {{ chrony_keyfile }}
+local stratum {{ chrony_local_stratum }}
+log {{ chrony_log|join(' ') }}
+logchange 0.5
+logdir {{ chrony_logdir }}
+maxupdateskew {{ chrony_maxupdateskew }}
+rtconutc
+{% if chrony_rtcsync_enabled | bool %}
+rtcsync
+{% endif %}
+{% for item in chrony_ntp_servers %}
+{%   if item['options'] is not defined %}
+{{ item['type'] | default('server') }} {{ item['server'] }}
+{%   elif item['options'] is defined %}
+{{ item['type'] | default('server') }} {{ item['server'] }}{% for opt in item['options'] %} {{ opt['option'] }}{% if opt['val'] is defined %} {{ opt['val'] }}{% endif %}{% endfor %}
+
+{%   endif %}
+{% endfor %}

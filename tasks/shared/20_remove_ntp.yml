@@ -1,0 +1,10 @@
+---
+# tasks/shared/20_remove_ntp.yml
+- name: Remove conflicting ntp progs
+  package:
+    name:
+    - ntp
+    - ntpsec
+    - sntp
+    state: absent
+

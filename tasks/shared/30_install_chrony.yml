@@ -1,0 +1,10 @@
+---
+# tasks/shared/30_install_chrony.yml
+- name: Install Chrony
+  package:
+    name: chrony
+    state: present
+    update_cache: yes
+    cache_valid_time: "{{ '3600' if ansible_facts.pkg_mgr == 'apt' else omit }}"
+  become: true
+
