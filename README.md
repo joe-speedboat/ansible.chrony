@@ -1,4 +1,4 @@
-# Absible Role: ntp
+# Absible Role: chrony
 This role does configure chrony on RHEL and Ubuntu LTS Systems.
 
 
@@ -7,15 +7,15 @@ Please look into `meta\main.yml`
 
 ## Install Role from Git
 ```
-git clone git@github.com:joe-speedboat/ansible.mtp.git /etc/ansible/roles/joe-speedboat.ntp
-cd /etc/ansible/roles/joe-speedboat.ntp
+git clone git@github.com:joe-speedboat/ansible.mtp.git /etc/ansible/roles/joe-speedboat.chrony
+cd /etc/ansible/roles/joe-speedboat.chrony
 rm -rf .git
 ``` 
 
 
 ## Install Role from Galaxy
 ```
-ansible-galaxy install joe-speedboat.ntp
+ansible-galaxy install joe-speedboat.chrony
 ``` 
 
 
