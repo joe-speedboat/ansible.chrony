@@ -22,7 +22,6 @@ ansible-galaxy install joe-speedboat.chrony
 
 ## Role Variables
 Variables are speaking or documented in defaults/main.yml   
-One variable is mandatory: vdoPhyDev 
 
 
 ## Dependencies
