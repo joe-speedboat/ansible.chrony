@@ -1,0 +1,5 @@
+- name: Ansible Chrony role test
+  hosts: all,!localhost
+  become: True
+  roles:
+  - joe-speedboat.ntp

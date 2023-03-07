@@ -1,0 +1,7 @@
+---
+# tasks/Debian/10_set_facts.yml
+- name: set_facts | Define Debian Facts
+  set_fact:
+    chrony_config: /etc/chrony/chrony.conf
+    chrony_service: chrony
+    chrony_keyfile: /etc/chrony/chrony.keys

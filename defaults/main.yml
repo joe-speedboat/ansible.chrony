@@ -1,7 +1,4 @@
 ---
-### custom values
-chrony_ntp_pool: ch.pool.ntp.org
-
 # defaults file for ansible-chrony
 
 # Optionally specify a host, subnet, or network from which to allow NTP
@@ -84,22 +81,17 @@ chrony_maxupdateskew: 100.0
 #         val: 3
 #
 chrony_ntp_servers:
-  - server: "{{ chrony_ntp_pool }}"
+  - server: 0.europe.pool.ntp.org
     type: pool
     options:
       - option: iburst
       - option: minpoll
         val: 8
-#  - server: 2.debian.pool.ntp.org
-#    options:
-#      - option: iburst
-#      - option: minpoll
-#        val: 8
-#  - server: 3.debian.pool.ntp.org
-#    options:
-#      - option: iburst
-#      - option: minpoll
-#        val: 8
-
+  - server: 1.europe.pool.ntp.org
+    type: pool
+    options:
+      - option: iburst
+      - option: minpoll
+        val: 8
 # Flag to control if the real time clock is to be kept synchronized.
 chrony_rtcsync_enabled: true

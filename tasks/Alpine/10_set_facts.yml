@@ -1,0 +1,7 @@
+---
+# tasks/Alpine/10_set_facts.yml
+- name: set_facts | Define Alpine Facts
+  set_fact:
+    chrony_config: /etc/chrony/chrony.conf
+    chrony_service: chronyd
+    chrony_keyfile: /etc/chrony/chrony.keys

@@ -23,6 +23,9 @@ galaxy_info:
         - stretch
         - buster
         - bullseye
+    - name: Alpine
+      versions:
+        - all
 
   galaxy_tags:
     - system

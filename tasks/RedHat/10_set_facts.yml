@@ -1,0 +1,7 @@
+---
+# tasks/RedHat/10_set_facts.yml
+- name: set_facts | Define RedHat Facts
+  set_fact:
+    chrony_config: /etc/chrony.conf
+    chrony_service: chronyd
+    chrony_keyfile: /etc/chrony.keys
