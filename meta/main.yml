@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  namespace: joe-speedboat
+#  namespace: joe-speedboat
   role_name: chrony
   author: Chris Ruettimann
   description: Ansible role to install/configure Chrony
