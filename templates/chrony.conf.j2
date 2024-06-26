@@ -12,6 +12,15 @@ rtconutc
 {% if chrony_rtcsync_enabled | bool %}
 rtcsync
 {% endif %}
+
+# Allow hosts
+{% if chrony_allow_hosts is defined and chrony_allow_hosts %}
+{% for network in chrony_allow_hosts %}
+allow {{ network }}
+{% endfor %}
+{% endif %}
+
+# ntp servers
 {% for item in chrony_ntp_servers %}
 {%   if item['options'] is not defined %}
 {{ item['type'] | default('server') }} {{ item['server'] }}
